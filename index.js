@@ -112,22 +112,6 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-// function animalNames(zooAnimals) {
-//   // Initialize an empty array to store the display names
-//   const displayNames = [];
-//   // For each animal in the animals array...
-//   zooAnimals.forEach((animal) => {
-//     // ...push their common and scientific names into the displayNames array
-//     displayNames.push(
-//       `name: ${animal.animal_name}, scientific: ${animal.scientific_name}`
-//     );
-//   });
-//   // Return the list of display names
-//   return displayNames;
-// }
-// // Log the display names to the console to view them
-// console.log("List of zoo animal display names:", animalNames(zooAnimals));
-
 function animalNames(zooAnimals) {
   const displayNames = [];
   zooAnimals.forEach((animal) => {
@@ -302,12 +286,20 @@ console.log("cuboid.surface", cuboid.surfaceArea()); // 130
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //Using CuboidMakerTwo, take your prototypes from above and refactor into class syntax. Then, create an object called cuboidTwo that uses the new keyword to use our CuboidMakerTwo class.
-
-class CuboidMakerTwo {}
+const cuboidTwo = new CuboidMaker({
+  lenght: 5,
+  width: 10,
+  height: 5,
+});
+class CuboidMakerTwo extends CuboidMaker {
+  constructor(attributes) {
+    super(attributes);
+  }
+}
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
-// console.log(cuboidTwo.volume()); // 100
-// console.log(cuboidTwo.surfaceArea()); // 130
+console.log(cuboidTwo.volume()); // 100
+console.log(cuboidTwo.surfaceArea()); // 130
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo() {
